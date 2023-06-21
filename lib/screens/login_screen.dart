@@ -1,9 +1,11 @@
+// import 'dart:js_interop';
+
 import 'package:flutter/material.dart';
-import 'package:flash_chat/components/rounded_button.dart';
-import 'package:flash_chat/constants.dart';
+import 'package:asmvp/components/rounded_button.dart';
+import 'package:asmvp/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'chat_screen.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:asmvp/screens/chat_screen.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
@@ -14,8 +16,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   bool showSpinner = false;
   final _auth = FirebaseAuth.instance;
-  String email;
-  String password;
+  String? email;
+  String? password;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Flexible(
                 child: Hero(
                   tag: 'logo',
-                  child: Container(
+                  child: SizedBox(
                     height: 200.0,
                     child: Image.asset('images/logo.png'),
                   ),
@@ -73,15 +75,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     showSpinner = true;
                   });
                   try {
-                    final user = await _auth.signInWithEmailAndPassword(
-                        email: email, password: password);
-                    if (user != null) {
-                      Navigator.pushNamed(context, ChatScreen.id);
+                    if (email != null && password != null) {
+                      final user = await _auth.signInWithEmailAndPassword(
+                          email: email!, password: password!);
+                      print(user);
+                      if (context.mounted) {
+                        Navigator.pushNamed(context, ChatScreen.id);
+                      }
+                      setState(() {
+                        showSpinner = false;
+                      });
                     }
-
-                    setState(() {
-                      showSpinner = false;
-                    });
                   } catch (e) {
                     print(e);
                   }

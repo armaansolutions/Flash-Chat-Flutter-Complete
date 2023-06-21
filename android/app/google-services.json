@@ -1,35 +1,41 @@
 {
   "project_info": {
-    "project_number": "1055788443339",
-    "firebase_url": "https://flash-chat-58a2a.firebaseio.com",
-    "project_id": "flash-chat-58a2a",
-    "storage_bucket": "flash-chat-58a2a.appspot.com"
+    "project_number": "95075364865",
+    "project_id": "salesconcierge-1aca2",
+    "storage_bucket": "salesconcierge-1aca2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1055788443339:android:26ee5a166746f262",
+        "mobilesdk_app_id": "1:95075364865:android:45e0f17b774afa8b435000",
         "android_client_info": {
-          "package_name": "co.appbrewery.flash_chat"
+          "package_name": "com.armaansolutions.asmvp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1055788443339-o0dpvs896iv6ju6s3kqhkndv0bt8cgoc.apps.googleusercontent.com",
+          "client_id": "95075364865-aco32vd5turfrhs0qa6idktcorbi2k91.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD6rctF2MNCGAIz2K70BQvTBfSJPHaaCqo"
+          "current_key": "AIzaSyDIh-pOHgA66xg7qAlSLIwoFX-H7EM_Gyk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1055788443339-o0dpvs896iv6ju6s3kqhkndv0bt8cgoc.apps.googleusercontent.com",
+              "client_id": "95075364865-aco32vd5turfrhs0qa6idktcorbi2k91.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "95075364865-1h2g6m60va2g4orgg5c5efmj0hlq16db.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.appbrewery.flashChat"
+              }
             }
           ]
         }
